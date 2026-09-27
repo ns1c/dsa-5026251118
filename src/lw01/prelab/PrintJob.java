@@ -1,11 +1,15 @@
 public abstract class PrintJob implements Chargeable {
 
-    private String id;
-    private int pages;
+    private String getId(){
+
+    }
+    private int getPages(){
+return pages;
+    }
 
     protected PrintJob(String id, int pages) {
         if (pages <= 0) {
-            throw new IllegalArgumentException("pages must be positive");
+            throw new System.out.println("pages must be positive");
         }
         this.id = id;
         this.pages = pages;
