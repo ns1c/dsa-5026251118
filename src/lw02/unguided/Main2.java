@@ -5,7 +5,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Main2 {
+public class Main {
 
     static final int MAX_BORROW = 2;
 
@@ -68,13 +68,10 @@ public class Main2 {
                 }
             }
 
-            boolean hasStock = bookData != null && Integer.parseInt(bookData[1]) > 0;
-            boolean underLimit = memberData != null && Integer.parseInt(memberData[1]) < MAX_BORROW;
+int stock = Integer.parseInt(bookData[1]);
+            int borrowed = Integer.parseInt(memberData[1]);
 
-            if (hasStock && underLimit) {
-                bookData[1] = String.valueOf(Integer.parseInt(bookData[1]) - 1);
-                memberData[1] = String.valueOf(Integer.parseInt(memberData[1]) + 1);
-                successful.add(request);
+            if (stock > 0 && borrowed < MAX_BORROW) {
             } else {
                 failedRequests.push(request);
             }
